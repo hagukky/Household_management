@@ -39,7 +39,8 @@ public class Home extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		request.setAttribute("garigari", GarigariDAO.searchAllGarigari());
+
+		//ここにHomedaoのリクエストセットアトリビュートが入る。
 
 		String userId = request.getParameter("id");
 		String pass = request.getParameter("pw");
@@ -50,9 +51,11 @@ public class Home extends HttpServlet {
 			RequestDispatcher dispatcher = request.getRequestDispatcher(view);
 			dispatcher.forward(request, response);
 		}else{
-			String view = "/WEB-INF/view/registerror.jsp";
+			String view = "/WEB-INF/view/loginerror.jsp";
+			request.setAttribute("message", "IDまたはパスワードが違います");
 			RequestDispatcher dispatcher = request.getRequestDispatcher(view);
 			dispatcher.forward(request, response);
+		}
 	}
 
 }

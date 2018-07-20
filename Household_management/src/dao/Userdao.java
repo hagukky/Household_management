@@ -19,7 +19,7 @@ public class Userdao {
 			Class.forName("com.mysql.jdbc.Driver");
 
 			con = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/db1?useSSL=false",
+					"jdbc:mysql://localhost:3306/household_management?useSSL=false",
 					"user",
 					"password");
 
@@ -80,7 +80,7 @@ public class Userdao {
 			Class.forName("com.mysql.jdbc.Driver");
 
 			con = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/db1?useSSL=false",
+					"jdbc:mysql://localhost:3306/household_management?useSSL=false",
 					"user",
 					"password");
 
